@@ -61,5 +61,6 @@ func generator(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "image/png")
+	w.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
 	_ = qr.Write(s, w)
 }
